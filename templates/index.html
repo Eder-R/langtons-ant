@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Langton's Ant</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>LANGTON'S ANT</h1>
+        <p>Simulação de autômato celular</p>
+    </header>
+
+    <main>
+
+        <section class="rules">
+            <div class="rule">
+                <span class="color-box off"></span>
+                <div>
+                    <strong>APAGADO → DIREITA</strong>
+                    <p>Vira, acende o quadrado e anda.</p>
+                </div>
+            </div>
+
+            <div class="rule">
+                <span class="color-box on"></span>
+                <div>
+                    <strong>ACESO → ESQUERDA</strong>
+                    <p>Vira, apaga o quadrado e anda.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="simulation">
+            <canvas id="grid"></canvas>
+        </section>
+
+        <section class="controls">
+            <button id="start">Iniciar</button>
+            <button id="step">Avançar</button>
+            <button id="reset">Reiniciar</button>
+
+            <label>
+                Velocidade
+                <input
+                    type="range"
+                    id="speed"
+                    min="1"
+                    max="100"
+                    value="20"
+                >
+            </label>
+        </section>
+
+        <div class="counter">
+            Passos: <span id="steps">0</span>
+        </div>
+
+    </main>
+
+    <script src="/static/script.js"></script>
+
+</body>
+</html>
